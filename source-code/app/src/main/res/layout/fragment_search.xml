@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".SearchFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp"
+        android:text="What are you looking for?"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="What are you looking for?" />
+
+    <RadioGroup
+        android:id="@+id/searchOptionsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <RadioButton
+            android:id="@+id/bookARoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book a Room"
+            android:textAppearance="@style/RadioButtonTextAppearnce" />
+
+        <RadioButton
+            android:id="@+id/eatAroundTown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eat Around Town"
+            android:textAppearance="@style/RadioButtonTextAppearnce"
+            tools:text="Eat Around Town " />
+
+        <RadioButton
+            android:id="@+id/bookSpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book  Spa"
+            android:textAppearance="@style/RadioButtonTextAppearnce" />
+
+        <RadioButton
+            android:id="@+id/bookGolf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Golf"
+            android:textAppearance="@style/RadioButtonTextAppearnce"
+            tools:text="Search for Golf" />
+
+        <RadioButton
+            android:id="@+id/orderWithUberEat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Food With Uber Eats"
+            android:textAppearance="@style/RadioButtonTextAppearnce"
+            tools:text="Search for Golf" />
+
+        <RadioButton
+            android:id="@+id/findStarbucks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find Starbucks"
+            android:textAppearance="@style/RadioButtonTextAppearnce"
+            tools:text="Search for Golf" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/letsGoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's Go"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/searchOptionsGroup" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

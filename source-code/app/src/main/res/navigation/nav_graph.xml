@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.codefest20.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/activeStayFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeStayFragment"
+        android:name="com.example.codefest20.ActiveStayFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_activeStayFragment_to_diningOptionsFragment"
+            app:destination="@id/diningOptionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.codefest20.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_searchEatAroundTownFragment"
+            app:destination="@id/searchEatAroundTownFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_bookARoomFragment"
+            app:destination="@id/bookARoomFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/diningOptionsFragment"
+        android:name="com.example.codefest20.DiningOptionsFragment"
+        android:label="dining_options"
+        tools:layout="@layout/dining_options" />
+    <fragment
+        android:id="@+id/searchEatAroundTownFragment"
+        android:name="com.example.codefest20.SearchEatAroundTownFragment"
+        android:label="SearchEatAroundTownFragment"
+        tools:layout="@layout/fragment_eat_around_town_search">
+        <action
+            android:id="@+id/action_searchEatAroundTownFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+        <deepLink
+            android:id="@+id/eatAroundTownDeeplink"
+            android:autoVerify="true"
+            app:uri="marriott://mobile-codefest/eat-food" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.codefest20.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/fragment_webview">
+        <argument
+            android:name="url"
+            android:defaultValue="marriott.com"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookARoomFragment"
+        android:name="com.example.codefest20.BookARoomFragment"
+        android:label="BookARoomFragment"
+        tools:layout="@layout/fragment_book_room">
+        <action
+            android:id="@+id/action_bookARoomFragment_to_hotelSearchResultFragment"
+            app:destination="@id/hotelSearchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelSearchResultFragment"
+        android:name="com.example.codefest20.HotelSearchResultFragment"
+        android:label="HotelSearchResultFragment"
+        tools:layout="@layout/fragment_hotel_search_result"/>
+</navigation>
